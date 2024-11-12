@@ -58,16 +58,15 @@ const Header = ({ open = false, setOpen = () => {} }) => {
     ROUTE_LIST.PHONE_NUMBER,
     ROUTE_LIST.REFER,
     ROUTE_LIST.GUEST_INVITE,
-  ].map((route)=> route.split('/')[1]);
+  ].map((route) => route.split('/')[1]);
 
   const firstSegment = location.pathname.split('/')[1];
 
   const showRoute = hiddenSection.includes(firstSegment);
 
-
   const handleDivClick = () => {
     // Navigate to another page when the div is clicked
-    goToTop()
+    goToTop();
     navigate('/');
   };
 
@@ -210,7 +209,6 @@ const Header = ({ open = false, setOpen = () => {} }) => {
                   src='/images/img_television.svg'
                   alt='television'
                   id='logo1'
-                  
                 />
               )}
               {location.pathname === '/' && (
@@ -251,7 +249,7 @@ const Header = ({ open = false, setOpen = () => {} }) => {
                 name='book a flight'
                 placeholder='Book a flight'
               />
-              <img className='flight-search-icon' src='/images/flight-icon.svg' alt='' />
+              <img className='flight-search-icon' src='/images/flight-icon.svg' alt='search' />
             </div>
             <div className='flight-type-select'>
               <span

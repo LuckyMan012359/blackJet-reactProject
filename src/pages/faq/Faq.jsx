@@ -74,8 +74,8 @@ const Faq = () => {
         console.log(error);
       }
     })();
-    
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -122,7 +122,7 @@ const Faq = () => {
           <img
             className='close-btn'
             src='images/close-icon-white.svg'
-            alt=''
+            alt='close button'
             onClick={handleCloseFaq}
           />
           <span className='mob-faq-heading'>FAQs</span>

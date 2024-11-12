@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 /**
  * A functional component that renders a news card.
@@ -13,38 +13,30 @@ import React from 'react'
 const NewsCard = () => {
   return (
     <div>
-      <div className="media-new-card">
-            <img
-              loading="lazy"
-              srcSet="../images/new3.png"
-              className="aspect-[1.03] object-contain object-center w-full overflow-hidden"
-              alt="news"
-            />
-            <div className="card-heading-media">
-              Silicon Valley Losing Ground in Washington
-            </div>
-            <div className="profile-img-txt">
-              <img
-                loading="lazy"
-                srcSet="../images/new1.png"
-                className="aspect-square object-contain object-center w-11 overflow-hidden shrink-0 max-w-full rounded-[50%]"
-                alt="profile"
-              />
-              <div>
-                <div className="user-name">
-                  By Akash Shakya
-                </div>
-                <div className="user-date">
-                  23 April 2023
-                </div>
-              </div>
-            </div>
-            <button className="read-btn">
-              Read more
-            </button>
+      <div className='media-new-card'>
+        <img
+          loading='lazy'
+          srcSet='../images/new3.png'
+          className='aspect-[1.03] object-contain object-center w-full overflow-hidden'
+          alt='news'
+        />
+        <div className='card-heading-media'>Silicon Valley Losing Ground in Washington</div>
+        <div className='profile-img-txt'>
+          <img
+            loading='lazy'
+            srcSet='../images/new1.png'
+            className='aspect-square object-contain object-center w-11 overflow-hidden shrink-0 max-w-full rounded-[50%]'
+            alt='profile'
+          />
+          <div>
+            <div className='user-name'>By Akash Shakya</div>
+            <div className='user-date'>23 April 2023</div>
           </div>
+        </div>
+        <button className='read-btn'>Read more</button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default NewsCard
+export default NewsCard;

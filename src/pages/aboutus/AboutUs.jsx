@@ -17,7 +17,7 @@ const AboutUs = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [details, setDetails] = React.useState(null);
-  const {  dispatchOnboardingForms } = useContext(OnboardingContext);
+  const { dispatchOnboardingForms } = useContext(OnboardingContext);
   const isMobile = useMediaQuery('(max-width : 699px)');
 
   const getDetails = async () => {
@@ -67,7 +67,7 @@ const AboutUs = () => {
         <img
           className='close-btn'
           src='images/close-icon-white.svg'
-          alt=''
+          alt='images/close-icon-white.svg'
           onClick={handleCloseAboutUs}
         />
         <div class='faq-heading faqm fixed-header-pages'>&nbsp;</div>
@@ -75,13 +75,13 @@ const AboutUs = () => {
           <div className='about-us-wrapper'>
             <div className='image-section'>
               <div className='upper-img'>
-                <img src={about1} alt='' />
-                <img src={about2} alt='' />
+                <img src={about1} alt='about1' />
+                <img src={about2} alt='about2' />
               </div>
               <div className='about-heading'>About us</div>
               <div className='lower-img'>
-                <img src={about3} alt='' />
-                <img src={about4} alt='' />
+                <img src={about3} alt='about3' />
+                <img src={about4} alt='about4' />
               </div>
             </div>
           </div>
@@ -114,13 +114,11 @@ const AboutUs = () => {
             </div>
             <div className='found-img'>
               <img src={aboutUsLeftImg} alt='about-left' />
-              
             </div>
           </div>
           <div className='found-in-sydney mission'>
             <div className='found-img'>
               <img src={aboutRightImg} alt='about-right' />
-              
             </div>
             <div className='found-txt'>
               <h3>Our mission</h3>
@@ -144,7 +142,7 @@ const AboutUs = () => {
             <h1>Our values</h1>
             <div className='value-card-wrap'>
               <div className='value-card'>
-                <img srcSet='../images/value1.svg' alt='' />
+                <img srcSet='../images/value1.svg' alt='card1' />
                 <h4>Customer Service</h4>
                 <p>
                   Customers are the heart of Black Jet. We strive to put customer's first with
@@ -154,7 +152,7 @@ const AboutUs = () => {
                 </p>
               </div>
               <div className='value-card'>
-                <img className='safety-img' srcSet='../images/value2.svg' alt='' />
+                <img className='safety-img' srcSet='../images/value2.svg' alt='card2' />
                 <h4>Safety</h4>
                 <p>
                   Our top priority is your well-being. With rigorous maintenance schedules, advanced
@@ -164,7 +162,7 @@ const AboutUs = () => {
                 </p>
               </div>
               <div className='value-card'>
-                <img className='tech-img' srcSet='../images/value3.svg' alt='' />
+                <img className='tech-img' srcSet='../images/value3.svg' alt='card3' />
                 <h4>Tech-Advanced</h4>
                 <p>
                   At the core of our mission is the fusion of aviation and intuitive mobile
@@ -189,7 +187,7 @@ const AboutUs = () => {
                   <div className='airport-inner'>
                     <div className='airport-div'>
                       <div className='air-img'>
-                        <img srcSet='../images/head1.svg' alt='' />
+                        <img srcSet='../images/head1.svg' alt='head1' />
                       </div>
                       <h3>Sydney</h3>
                     </div>
@@ -198,7 +196,7 @@ const AboutUs = () => {
                   <div className='airport-inner'>
                     <div className='airport-div'>
                       <div className='air-img'>
-                        <img srcSet='../images/head2.svg' alt='' />
+                        <img srcSet='../images/head2.svg' alt='head2' />
                       </div>
                       <h3>Melbourne</h3>
                     </div>
