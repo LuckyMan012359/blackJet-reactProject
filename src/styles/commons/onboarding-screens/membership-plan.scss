@@ -223,6 +223,7 @@
 
 .free-preview {
   width: 557px;
+  position: relative;
 
   .payment-header-wrapper {
     // height: 163px !important;
@@ -230,6 +231,13 @@
     @media only screen and (max-width: $mobile-699) {
       height: 25px !important;
     }
+  }
+
+  .free-preview-list {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .list-img-txt {
@@ -343,6 +351,7 @@
 
       .payment-cardp {
         padding-bottom: 100px;
+
 
         @media only screen and (max-width: $mobile-699) {
           padding-bottom: 0;

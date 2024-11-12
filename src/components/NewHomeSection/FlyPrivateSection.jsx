@@ -25,7 +25,11 @@ const FlyPrivateSection = () => {
     <div>
       <div className='new-way-main'>
         <div className='new-way-img'>
-          <Img className='side-img' src={flightChair} alt='picture' />
+          <Img
+            className='side-img'
+            src={flightChair}
+            alt='picture'
+          />
           {!isMobile && (
             <div className='desk-section-div'>
               <div className=' parallax-div'>
@@ -99,11 +103,12 @@ const FlyPrivateSection = () => {
               </h1>
             ) : (
               <>
-                <h1 className='new-way-txt new-way-heading' size='txtHauoraMedium40'>
-                  New Way to
-                  <br />
-                  Fly Private
-                </h1>
+              <h1 className='new-way-txt new-way-heading' size='txtHauoraMedium40'>
+                New Way to 
+              </h1>
+              <h1 className='new-way-txt new-way-heading' size='txtHauoraMedium40'>
+               Fly Private
+              </h1>
               </>
             )}
             <h5>

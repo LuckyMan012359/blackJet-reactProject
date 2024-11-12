@@ -1,8 +1,10 @@
+import { useMediaQuery } from '@mui/material';
+import { useBlackJetContext } from 'context/OnboardingContext';
 import usePwaNavigation from 'Hook/usePwaNavigation';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { PWA_REDIRECTION_LINK, ROUTE_LIST } from 'routes/routeList';
-import { goToTop } from 'utils';
+import { goToTop, isDesktopFooterValidRoute } from 'utils';
 
 /**
  * IconSection renders the footer section of the home page which contains the black jet logo, social media links, and a FAQs link.
@@ -12,11 +14,17 @@ import { goToTop } from 'utils';
 const IconSection = () => {
   const navigate = useNavigate();
   const { redirect, isPwa } = usePwaNavigation();
-/**
- * handleFAQ navigates to the FAQs page based on the user's platform.
- * If the user is on a PWA, then it redirects to the PWA's FAQs page.
- * If the user is not on a PWA, then it navigates to the website's FAQs page.
- */
+  const isMobile = useMediaQuery('(max-width: 699px)');
+
+  const { onboardingForms } = useBlackJetContext();
+
+  const { faqsLocationIds = [] } = onboardingForms?.savedLocation || {};
+
+  /**
+   * handleFAQ navigates to the FAQs page based on the user's platform.
+   * If the user is on a PWA, then it redirects to the PWA's FAQs page.
+   * If the user is not on a PWA, then it navigates to the website's FAQs page.
+   */
   const handleFAQ = () => {
     if (isPwa) {
       //When user /app mean he is using pwa then redirect to pwa
@@ -25,6 +33,7 @@ const IconSection = () => {
     }
     navigate(ROUTE_LIST.FAQ);
   };
+
   return (
     <div>
       <div className='social-media-wrap'>
@@ -68,10 +77,23 @@ const IconSection = () => {
             </li>
           </ul>
         </div>
+
         <div onClick={handleFAQ} className='option-text'>
           <div className='faq-link-wrap'>
-            <p>FAQs </p>
-            <img src='/images/img_arrowright.svg' alt='' />
+            {/* {(isMobileValidRoute(faqsLocationIds) ) && ( */}
+            {isMobile && (
+              <>
+                <p>FAQs </p>
+                <img src='/images/img_arrowright.svg' alt='' />
+              </>
+            )}
+
+            {!isMobile && isDesktopFooterValidRoute(faqsLocationIds) && (
+              <>
+                <p>FAQs </p>
+                <img src='/images/img_arrowright.svg' alt='' />
+              </>
+            )}
           </div>
         </div>
       </div>

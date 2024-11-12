@@ -66,9 +66,9 @@ const MobileLayout = () => {
     aboutUsLocationIds = [],
     careersLocationIds = [],
     contactUsLocationIds = [],
-    faqsLocationIds = [],
+    // faqsLocationIds = [],
     investorsLocationIds = [],
-    legalLocationIds = [],
+    // legalLocationIds = [],
     mediaPressLocationIds = [],
     newsLocationIds = [],
   } = onboardingForms?.savedLocation || {};
@@ -82,12 +82,12 @@ const MobileLayout = () => {
         return isMobileValidRoute(careersLocationIds);
       case ROUTE_LIST.CONTACT_US:
         return isMobileValidRoute(contactUsLocationIds);
-      case ROUTE_LIST.FAQ:
-        return isMobileValidRoute(faqsLocationIds);
+      // case ROUTE_LIST.FAQ:
+      //   return isMobileValidRoute(faqsLocationIds);
       case ROUTE_LIST.INVESTORS:
         return isMobileValidRoute(investorsLocationIds);
-      case ROUTE_LIST.LEGAL:
-        return isMobileValidRoute(legalLocationIds);
+      // case ROUTE_LIST.LEGAL:
+      //   return isMobileValidRoute(legalLocationIds);
       case ROUTE_LIST.MEDIA:
         return isMobileValidRoute(mediaPressLocationIds);
       case ROUTE_LIST.NEWS:

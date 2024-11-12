@@ -212,11 +212,9 @@ const CardSection = (props) => {
             height: details?.discountPrice ? '194px' : '114px',
           }}
         >
-          {details?.discountPrice && (
+          {details?.discountPrice && details?.bannerTag && (
             <div className='exclusive'>
-              <p>
-                {!details?.preOrder ? 'Secure your monthly price' : 'Exclusive pre-order price'}
-              </p>
+              <p>{details?.bannerTag}</p>
             </div>
           )}
           <div className='payment-header'>
@@ -236,6 +234,7 @@ const CardSection = (props) => {
                           {/* <img src='/images/img_vector20.svg' alt='vectorTwenty_One' /> */}
                         </>
                       )}
+                      {/* Desktop View */}
                       {!details?.discountPrice && (
                         <>
                           <h3 className='exclu-num latest-price-without-discount'>
@@ -246,6 +245,7 @@ const CardSection = (props) => {
                       )}
                     </div>
                   </div>
+                  {/* Mobile View */}
                   {details?.discountPrice && (
                     <div className='activate-txt 1'>
                       <span className='five-s discount-price'>
@@ -311,7 +311,10 @@ const CardSection = (props) => {
               }
               return (
                 <div className='list-img-txt' key={item?._id}>
-                  <img src='/images/img_checkmark.svg' alt='checkmark_Five' />
+                  {item.check && <img src='/images/img_checkmark.svg' alt='checkmark_Five' />}
+                  {!item.check && (
+                    <img src='/images/cross.svg' alt='cross' className='membership-cross-icon' />
+                  )}
                   <div className='five-wrap'>
                     <p className='flex gap-2 waiv-d'>{item?.highlight || 'NA'}</p>
 
@@ -355,14 +358,7 @@ const CardSection = (props) => {
                   className='w-4'
                 />
               </button>
-              {/* <button
-                onClick={handlePayment}
-                type="submit"
-                id="RectButtons1"
-                className="select-btn"
-              >
-                Select
-              </button> */}
+
               <CommonButton
                 text={
                   <div>

@@ -1,18 +1,21 @@
-import React, { memo, useContext } from 'react';
+import React, { memo, useEffect } from 'react';
 import useQueryParams from 'Hook/useQueryParams';
 import { useNavigate } from 'react-router';
 import CommonButton from 'components/formcomponents/CommonButton';
-import { onboard } from 'api/onboarding';
-import OnboardingContext from 'context/OnboardingContext';
+import { getMembershipDetails, onboard } from 'api/onboarding';
+import { useBlackJetContext } from 'context/OnboardingContext';
 import { CLEAR_ONBOARDING } from 'constants/actions';
 import { ROUTE_LIST } from 'routes/routeList';
+import { Text } from 'components/Text';
 
 const FreePreviewCard = (props) => {
   const queryParams = useQueryParams();
   const type = queryParams.type || '';
   const navigate = useNavigate();
+  const [freePrevData, setFreePrevData] = React.useState(null);
   // const divRef = useRef();
-  const { onboardingForms, dispatchOnboardingForms } = useContext(OnboardingContext);
+  const { onboardingForms, dispatchOnboardingForms } = useBlackJetContext();
+
 
   const handleFree = async () => {
     let response = await onboard();
@@ -29,65 +32,81 @@ const FreePreviewCard = (props) => {
     }
   };
 
+  const getDetails = async () => {
+    let response = await getMembershipDetails({ type: 'Free Preview' });
+    if (response?.data?.status_code === 200) {
+      setFreePrevData(response?.data?.data);
+    }
+  };
+
+  useEffect(() => {
+    getDetails();
+  }, []);
+
   const details = onboardingForms?.membershipData;
+
+
+  // if(!freePrevData)
 
   return (
     <div id='payment-card-new' className='payment-card-new free-preview'>
-      <div className='payment-cardp !transition !duration-1000'>
+      <div className='payment-cardp !transition !duration-1000 w-full'>
         <div
           className='payment-header-wrapper'
           style={{
             height: details?.discountPrice ? '194px' : '114px',
           }}
         >
-          {/* <div className="exclusive">
-                        <p>{props?.exclusivepreordOne}</p>
-                    </div> */}
+          {freePrevData?.bannerTag && (
+            <div className='exclusive'>
+              <p>{freePrevData?.bannerTag}</p>
+            </div>
+          )}
           <div className='payment-header'>
             <div className='header-txt'>
               <div className='unlimt-h'>
-                <h1 className='unlimit-p'>{props?.unlimitedplanmeOne}</h1>
-                {/* <Line className="w-full line h-px bg-white-A700" /> */}
+                <h1 className='unlimit-p'>Free Preview</h1>
               </div>
             </div>
           </div>
         </div>
-        <div className='list-section '>
-          <div className='list-inflex'>
+        <div className='free-preview-list'>
+          <div className='list-section '>
+            <div className='list-inflex'>
+              <RenderList highlightsArray={freePrevData?.highlightsArray} />
+            </div>
+          </div>
+          <Text className='free-preview-text' size='txtHauoraLight16'>
+            <span
+              className=' activate-txt '
+              dangerouslySetInnerHTML={{ __html: freePrevData?.text }}
+            ></span>
+          </Text>
+        </div>
+        {props?.freePreview && (
+          <div className='free-btn-wrap'>
+            <CommonButton onClick={handleFree} className={'free-btn-free'} text='Select' />
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+const RenderList = ({ highlightsArray }) => {
+  return (
+    highlightsArray &&
+    highlightsArray.length > 0 &&
+    highlightsArray.map((item, index) => {
+      return (
+        <>
+          {!item.check && (
             <div className='list-img-txt'>
               <img src='/images/cross.svg' alt='checkmark' />
-              <p>{props?.unlimitedallyouOne}</p>
+              <p>{item.highlight}</p>
             </div>
-            <div className='list-img-txt'>
-              <img src='/images/cross.svg' alt='checkmark_One' />
-              <p>{props?.durationOne}</p>
-            </div>
-            <div className='list-img-txt'>
-              <img src='/images/cross.svg' alt='checkmark_Two' />
-              <p>{props?.bookchangeflighOne}</p>
-            </div>
-            <div className='list-img-txt'>
-              <img src='/images/cross.svg' alt='checkmark_Three' />
-              <p>{props?.changecancelfliOne}</p>
-            </div>
-            <div className='list-img-txt'>
-              <img src='/images/cross.svg' alt='checkmark_Four' />
-              <p>{props?.nohiddenfees}</p>
-            </div>
-            <div className='list-img-txt'>
-              <img src='/images/cross.svg' alt='checkmark_Five' />
-              <div className='five-wrap'>
-                <p className='flex gap-2 waiv-d'>One time Initiation & Verification Fee waived </p>
-                <p className='waiv'>
-                  {' '}
-                  One time Initiation & Verification <p className='fee-waiv'> Fee waived</p>
-                </p>
-              </div>
-            </div>
-            <div className='list-img-txt'>
-              <img src='/images/cross.svg' alt='checkmark_Six' />
-              <p>{props?.prepaythefirst}</p>
-            </div>
+          )}
+          {item.check && (
             <div className='list-img-txt check-s'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -113,22 +132,12 @@ const FreePreviewCard = (props) => {
                   </clipPath>
                 </defs>
               </svg>
-              <p>{props?.fullyrefundableOne}</p>
-            </div>
-          </div>
-          {/* {props?.descriptionFour} */}
-          {props.button && <CommonButton className='preorder-btn' text={props?.preOrderNowOne} />}
-
-          {props?.freePreview && (
-            <div className='free-btn-wrap'>
-              <CommonButton onClick={handleFree} className={'free-btn-free'} text='Select' />
+              <p>{item.highlight}</p>
             </div>
           )}
-
-          
-        </div>
-      </div>
-    </div>
+        </>
+      );
+    })
   );
 };
 

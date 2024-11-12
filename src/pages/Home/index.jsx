@@ -13,7 +13,6 @@ const Home = () => {
   return (
     <>
       {/* Get App */}
-      <Entermobilegetapp />
       {!isPwa && <Entermobilegetapp />}
       <div className='relative flex flex-col w-full mx-auto bg-gray-900 font-hauora sm:bg-inherit'>
         <HOMEDesktopTabletLandscapeHomecontent />

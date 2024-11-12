@@ -55,7 +55,7 @@
   @media only screen and (max-width: 2160px) {
     padding: 84px 244px;
   }
-
+  
   @media only screen and (max-width: 2150px) {
     padding: 84px 230px;
   }
@@ -264,7 +264,7 @@
   @media only screen and (max-width: 970px) {
     padding: 72px 23px;
   }
-
+ 
   @media only screen and (max-width: 950px) {
     padding: 48px 13px;
   }
@@ -317,7 +317,7 @@
     padding: 48px 8px;
   }
 
-  h2 {
+  h1 {
     font-family: $font-Hauora-600;
     font-size: $font-64;
     color: #f2f2f2;
@@ -379,7 +379,7 @@
       padding: 16px;
       gap: 8px;
     }
-
+    
     @media only screen and (max-width: $tablet-1049) {
       width: 222px;
       height: 324px;
@@ -407,7 +407,7 @@
       }
       @media only screen and (max-width: $mobile-699) {
         font-size: $font-16;
-
+       
        }
     }
     .homeCardDesc {
@@ -438,7 +438,7 @@
         width: 36px;
         height: 36px;
       }
-
+     
     }
   }
   .home-last-div {
@@ -497,8 +497,8 @@
       }
     }
   }
-
-}
+  
+}  
 .homeCard.guest{
   @media only screen and (max-width: $mobile-699) {
     min-width: 262px!important;
@@ -531,3 +531,4 @@
     }
   }
 }
+

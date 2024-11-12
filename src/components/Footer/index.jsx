@@ -246,9 +246,11 @@ const Footer = () => {
                       >
                         Investors
                       </Link> */}
-                      <Link to='/careers' className='w-auto my-auto footer-txt cursor-pointer'>
-                        Careers
-                      </Link>{' '}
+                      {isDesktopFooterValidRoute(careersLocationIds) && (
+                        <Link to='/careers' className='w-auto my-auto footer-txt cursor-pointer'>
+                          Careers
+                        </Link>
+                      )}
                     </>
                   )}
                   <div className=' sm:hidden  flex flex-col h-full inset-y-[0] items-end justify-start my-auto md:pl-10 sm:pl-5  right-[0] w-[94%]'>
@@ -338,9 +340,11 @@ const Footer = () => {
                   {/* <li className='text-center footer-txt'>
                     <Link to='/media'>Media/Press</Link>
                   </li> */}
-                  <li className='text-center footer-txt'>
-                    <Link to='/careers'>Careers</Link>
-                  </li>
+                  {isDesktopFooterValidRoute(careersLocationIds) && (
+                    <li className='text-center footer-txt'>
+                      <Link to='/careers'>Careers</Link>
+                    </li>
+                  )}
                   {/* <li className='text-center footer-txt'>
                     <Link to='/investors'>Investors</Link>
                   </li> */}
@@ -377,27 +381,25 @@ const Footer = () => {
                     )}
                   </div>
 
+                  {/* Mobile Footer */}
                   <div className='footer-mobile-wrap flex flex-row items-center justify-center w-auto gap-6 sm:text-center sm:flex-row-reverse sm:w-full'>
                     <Text className='flex w-auto text-sm text-gray-400 sm:hidden'>
                       ©2023 Black Jet Mobility Pty Ltd
                     </Text>
-                    {isDesktopFooterValidRoute(legalLocationIds) && (
-                      <div
-                        href='/'
-                        className='w-auto text-sm text-[#ffffff55] privacy-footer  sm:flex sm:justify-end sm:w-1/2'
-                      >
-                        <Link to={'/legal?type=Privacy Policy'} className='option-text'>
-                          <Text className='sm:text-center whitespace-nowrap'>Privacy Policy</Text>
-                        </Link>
-                      </div>
-                    )}
-                    {isDesktopFooterValidRoute(legalLocationIds) && (
-                      <Link to={'/legal?type=Terms of use'} className='option-text'>
-                        <Text className='w-auto text-sm text-[#ffffff55] privacy-footer sm:text-center sm:w-1/2'>
-                          Terms of Use
-                        </Text>
+                    <div
+                      href='/'
+                      className='w-auto text-sm text-[#ffffff55] privacy-footer  sm:flex sm:justify-end sm:w-1/2'
+                    >
+                      <Link to={'/legal?type=Privacy Policy'} className='option-text'>
+                        <Text className='sm:text-center whitespace-nowrap'>Privacy Policy</Text>
                       </Link>
-                    )}
+                    </div>
+
+                    <Link to={'/legal?type=Terms of use'} className='option-text'>
+                      <Text className='w-auto text-sm text-[#ffffff55] privacy-footer sm:text-center sm:w-1/2'>
+                        Terms of Use
+                      </Text>
+                    </Link>
                   </div>
                   <Text className='hidden w-auto text-sm text-[#ffffff55] mobility sm:my-[30px] mb-2 sm:justify-center sm:flex sm:w-full sm:text-center'>
                     ©2023 Black Jet Mobility Pty Ltd
