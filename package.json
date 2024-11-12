@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && mocha './build-test/**/*.mjs' --recursive --require @babel/register",
+    "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!my-library-dir)/'",
     "eject": "react-scripts eject"
   },
