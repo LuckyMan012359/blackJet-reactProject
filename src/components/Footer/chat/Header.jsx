@@ -177,9 +177,11 @@ const Header = ({
         <div
           className={`${
             open ? 'attach-file-container-open' : 'attach-file-container-close'
-          } attach-file-container`}
+          } attach-file-container ${
+            open ? `max-h-[${containerRef?.current?.scrollHeight}px]` : 'max-h-0'
+          }`}
           ref={containerRef}
-          style={{ maxHeight: open ? containerRef?.current?.scrollHeight : 0 }}
+          // style={{ maxHeight: open ? containerRef?.current?.scrollHeight : 0 }}
         >
           <ul className='attach-file-list' onClick={() => setOpen(false)}>
             <ListWithIcon data={fileChoose} />
@@ -316,10 +318,11 @@ export function CameraComponent({ setImageInfo, handleCloseModal }) {
         ref={videoRef}
         id={'desktop-camera-video'}
         autoPlay
-        style={{
-          display: capturedImage ? 'none' : 'block',
-          transform: 'scaleX(-1)',
-        }}
+        // style={{
+        //   display: capturedImage ? 'none' : 'block',
+        //   transform: 'scaleX(-1)',
+        // }}
+        className={`${capturedImage ? '!hidden' : '!block'} transform scale-x-flip`}
       />
       <canvas ref={canvasRef} style={{ display: 'none' }} />
       <div className='camera-buttons'>
@@ -435,9 +438,10 @@ const MobileCamera = ({ handleCloseModal, setImageInfo }) => {
           screenshotFormat='image/jpeg'
           videoConstraints={{ facingMode }}
           mirrored={true}
-          style={{
-            display: capturedImage ? 'none' : 'block',
-          }}
+          // style={{
+          //   display: capturedImage ? 'none' : 'block',
+          // }}
+          className={`${capturedImage ? '!hidden' : '!block'}`}
         />
       </div>
       <div className='camera-buttons'>
@@ -465,11 +469,13 @@ const MobileCamera = ({ handleCloseModal, setImageInfo }) => {
           </div>
         ) : (
           <div
-            className='camera-rotation'
-            style={{
-              transform: `rotate(${facingMode === 'user' ? 0 : 180}deg)`,
-            }}
+            className={`camera-rotation transform ${
+              facingMode === 'user' ? 'rotate-0' : 'rotate-180'
+            }`}
             onClick={handleSwitchCamera}
+            // style={{
+            //   transform: `rotate(${facingMode === 'user' ? 0 : 180}deg)`,
+            // }}
           >
             <LoopIcon />
           </div>

@@ -16,7 +16,6 @@ const FreePreviewCard = (props) => {
   // const divRef = useRef();
   const { onboardingForms, dispatchOnboardingForms } = useBlackJetContext();
 
-
   const handleFree = async () => {
     let response = await onboard();
     if (response?.data?.status_code === 200) {
@@ -45,17 +44,16 @@ const FreePreviewCard = (props) => {
 
   const details = onboardingForms?.membershipData;
 
-
   // if(!freePrevData)
 
   return (
     <div id='payment-card-new' className='payment-card-new free-preview'>
       <div className='payment-cardp !transition !duration-1000 w-full'>
         <div
-          className='payment-header-wrapper'
-          style={{
-            height: details?.discountPrice ? '194px' : '114px',
-          }}
+          className={`payment-header-wrapper ${details?.discountPrice ? 'h-[194px]' : 'h-[114px]'}`}
+          // style={{
+          //   height: details?.discountPrice ? '194px' : '114px',
+          // }}
         >
           {freePrevData?.bannerTag && (
             <div className='exclusive'>

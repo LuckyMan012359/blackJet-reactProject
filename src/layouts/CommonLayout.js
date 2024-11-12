@@ -11,8 +11,6 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { ROUTE_LIST } from 'routes/routeList';
 import { isDesktopValidRoute, isMobileValidRoute } from 'utils';
 
-
-
 /**
  * CommonLayout component
  *
@@ -28,7 +26,6 @@ const CommonLayout = ({ open, setOpen, ...props }) => {
   const isMobile = useMediaQuery('(max-width:699px)');
   const pathname = location.pathname;
   useScrollToTop();
-
 
   const isShowHeaderFooter = () => {
     if (
@@ -46,7 +43,10 @@ const CommonLayout = ({ open, setOpen, ...props }) => {
 
   return (
     <>
-      <div style={{ display: isShowHeaderFooter() ? 'block' : 'none' }}>
+      <div
+        // style={{ display: isShowHeaderFooter() ? 'block' : 'none' }}
+        className={`${isShowHeaderFooter() ? '!block' : '!hidden'}`}
+      >
         {<Header open={open} setOpen={setOpen} />}
       </div>
       <div className={`${isMobile && 'min-h-screen bg-transparent'}`}>

@@ -233,8 +233,18 @@ const PhoneOnboarding = () => {
             <>
               <div className=' horizontal'>
                 <div
-                  style={{ width: `${currentIndex * 11 || 11}vw` }}
-                  className=' h-[0px] border-2 small-w z-40 absolute border-solid border-[#fffdfd] top-[50px] left-[68px]'
+                  // style={{ width: `${currentIndex * 11 || 11}vw` }}
+                  className={`${
+                    currentIndex === 0
+                      ? 'w-[11vw]'
+                      : currentIndex === 1
+                      ? 'w-[22vw]'
+                      : currentIndex === 2
+                      ? 'w-[33vw]'
+                      : currentIndex === 3
+                      ? 'w-[44vw]'
+                      : 'w-[11vw]' // Default width
+                  } h-0 border-2 z-40 absolute border-solid border-[#fffdfd] top-[50px] left-[68px]`}
                 ></div>
               </div>
             </>

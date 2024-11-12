@@ -127,10 +127,10 @@ const UserChat = ({
             <img
               src={chatValue ? checkIcon : circleIconDisabled}
               alt='check'
-              className={'edit-user-icon'}
-              style={{
-                pointerEvents: chatValue ? 'auto' : 'none',
-              }}
+              className={`edit-user-icon ${chatValue ? 'auto' : 'hidden'}`}
+              // style={{
+              //   pointerEvents: chatValue ? 'auto' : 'none',
+              // }}
               onClick={(e) => handleUpdateMessage(e, chatValue || chat?.message, chat)}
             />
           )}
@@ -192,7 +192,7 @@ export const ContextMenu = ({
           visible ? 'attach-file-container-open' : 'attach-file-container-close'
         } attach-file-container`}
         ref={containerRef}
-        style={{ maxHeight: visible ? containerRef?.current?.scrollHeight : 0 }}
+        // style={{ maxHeight: visible ? containerRef?.current?.scrollHeight : 0 }}
       >
         <ul className='attach-file-list'>
           <ListWithIcon2 icon={editObj.icon} title={editObj.title} onClick={editObj.onClick} />
@@ -347,10 +347,10 @@ const RenderImgAdmin = ({ data, signalRef, admin }) => {
               src={data.mediaUrl}
               onLoad={handleImgLoad}
               alt='media'
-              className='rounded-sm'
-              style={{
-                opacity: imgLoading ? '0.2' : '1',
-              }}
+              className={`rounded-sm ${imgLoading ? 'opacity-[0.2]' : 'opacity-[1]'}`}
+              // style={{
+              //   opacity: imgLoading ? '0.2' : '1',
+              // }}
             />
             {imgLoading && (
               <Skeleton
