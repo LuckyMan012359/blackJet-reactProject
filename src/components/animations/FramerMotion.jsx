@@ -26,12 +26,11 @@ const FramerMotion = ({ children, key }) => {
         initial='hidden'
         animate='visible'
         exit='exit'
-        style={{ minHeight: '100vh' }}
         variants={openTopVariants}
         transition={{ duration: 0.3 }}
         id='framer-motion'
         {...children.props}
-
+        className='!min-h-[100vh]'
       >
         {children}
       </motion.div>

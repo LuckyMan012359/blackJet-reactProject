@@ -153,7 +153,6 @@ const Header = ({
     onClick: handleOpenModal,
   };
 
-
   return (
     <>
       {!isMobile && (
@@ -196,7 +195,7 @@ const Header = ({
               <ExpandMore onClick={handleClose} className='' />
             )}
 
-            {(!receiver?.subadmin_id) && (
+            {!receiver?.subadmin_id && (
               <div className='chat-offline-container'>
                 <div className='chat-circle'></div>
                 <p className='chat-offline-text'>Offline</p>

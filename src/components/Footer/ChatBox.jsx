@@ -109,19 +109,12 @@ const ChatBox = ({ children }) => {
   return (
     <>
       <div
-        className='chat-overlay'
-        style={{
-          display: isMobile && onboardingForms.isChatOpen.open ? 'block' : 'none',
-        }}
+        className={`chat-overlay ${
+          isMobile && onboardingForms.isChatOpen.open ? 'block' : 'hidden'
+        }`}
       ></div>
       <div id='chat-container' className='main-chat-wrapper'>
-        <SlidAnimation
-          // style={{
-          //   backdropFilter: isMobile ? 'initial' : 'blur(50px)',
-          // }}
-          className='chat-main-container'
-          open={onboardingForms.isChatOpen.open}
-        >
+        <SlidAnimation className='chat-main-container' open={onboardingForms.isChatOpen.open}>
           <ChatArea size={size} setSize={setSize}>
             <SiteChat
               size={size}
@@ -940,15 +933,11 @@ const SiteChat = ({
     return false;
   };
 
-  
-
   return (
     <div
-      style={{
-        overflowY: !subAdminNotAvailable ? 'scroll' : 'initial',
-        flex: 1,
-      }}
-      className='chat-box-resized-wrap'
+      className={`chat-box-resized-wrap !flex-1 ${
+        !subAdminNotAvailable ? 'overflow-y-scroll' : 'overflow-y-visible'
+      }`}
       ref={containerRef}
       id='chat-box-resized-wrap'
       onScroll={handleScroll}
@@ -962,13 +951,7 @@ const SiteChat = ({
         isGuestUser={subAdminNotAvailable}
       />
 
-      <div
-        className='chat-area'
-        onClick={handleCloseHeader}
-        style={{
-          display: subAdminNotAvailable && 'block',
-        }}
-      >
+      <div className={`chat-area ${subAdminNotAvailable && '!block'}`} onClick={handleCloseHeader}>
         {/* Not getting subadmin */}
         {showOfflineScreen() && (
           <NoSubAdmin isSubAdminWithGuest={isSubAdminWithGuest} isGuestMode={isGuestMode} />
@@ -1046,19 +1029,17 @@ const SiteChat = ({
           />
           {/* imgUploading */}
           <div
-            className='send-msg-wrap'
-            style={{
-              backgroundColor: imgUploading || !isMobile ? 'transparent' : arrowColor(),
-            }}
+            className={`send-msg-wrap ${
+              imgUploading || !isMobile ? '!bg-transparent' : `!bg-${arrowColor()}`
+            }`}
           >
             {imgUploading ? (
               <CircularProgress size={16} className=' !text-[12px] chat-send-loader' />
             ) : (
               <East
-                className=' !text-[12px] chat-send-button'
-                style={{
-                  fill: isMobile ? 'currentColor' : arrowColor(),
-                }}
+                className={`!text-[12px] chat-send-button ${
+                  isMobile ? 'fill-current' : `fill-${arrowColor()}`
+                }`}
                 onClick={sendMessage}
               />
             )}
