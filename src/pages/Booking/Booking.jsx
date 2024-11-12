@@ -98,7 +98,7 @@ const Booking = ({ open, setOpen }) => {
           </div>
         </div> */}
         <div className='tour-img-wrap cursor-pointer' role='button' onClick={handleOpenClick}>
-          <img className='tour-img' src={virtualTour } alt='' />
+          <img className='tour-img' src={virtualTour} alt='' />
           <span className='tour-click'>
             Tour the plane{' '}
             <svg
@@ -173,7 +173,7 @@ const Booking = ({ open, setOpen }) => {
           <div className='homeCard health'>
             <div className='home-inner'>
               <img src='/images/member-mob-5.svg' alt='favorite' />
-              <h1 className='homeCardHeader'>Flexibility</h1>
+              <h3 className='homeCardHeader'>Flexibility</h3>
             </div>
             <p className='homeCardDesc'>
               Instantly book your flight at any moment, with the freedom to cancel without penalty
@@ -237,7 +237,7 @@ const Booking = ({ open, setOpen }) => {
           <div className='homeCard'>
             <div className='home-inner'>
               <img src='/images/member-mob-10.svg' alt='whybeamember' />
-              <h1 className='homeCardHeader'>Arrive 15 minutes before departure</h1>
+              <h3 className='homeCardHeader'>Arrive 15 minutes before departure</h3>
             </div>
             <p className='homeCardDesc'>
               Arrive a mere 15 minutes before departure at our exclusive private terminal — say
