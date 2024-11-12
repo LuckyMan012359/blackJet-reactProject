@@ -55,7 +55,7 @@
   @media only screen and (max-width: 2160px) {
     padding: 84px 244px;
   }
-  
+
   @media only screen and (max-width: 2150px) {
     padding: 84px 230px;
   }
@@ -264,7 +264,7 @@
   @media only screen and (max-width: 970px) {
     padding: 72px 23px;
   }
- 
+
   @media only screen and (max-width: 950px) {
     padding: 48px 13px;
   }
@@ -317,7 +317,7 @@
     padding: 48px 8px;
   }
 
-  h1 {
+  h2 {
     font-family: $font-Hauora-600;
     font-size: $font-64;
     color: #f2f2f2;
@@ -349,9 +349,9 @@
       grid-template-columns: repeat(3, minmax(0, auto));
     }
     @media only screen and (max-width: 699px) {
-     display: flex;
-     overflow-x: auto;
-     max-width: 699px;
+      display: flex;
+      overflow-x: auto;
+      max-width: 699px;
     }
   }
 
@@ -372,14 +372,14 @@
     background-color: rgb(36 36 36 / var(--tw-bg-opacity));
     padding: 24px;
     min-width: 200px !important;
-    overflow: hidden!important;
+    overflow: hidden !important;
     @media only screen and (max-width: $desktop-1799) {
       width: 274px;
       height: 338px;
       padding: 16px;
       gap: 8px;
     }
-    
+
     @media only screen and (max-width: $tablet-1049) {
       width: 222px;
       height: 324px;
@@ -389,9 +389,9 @@
     @media only screen and (max-width: 699px) {
       width: 188px;
       height: 256px;
-      padding-top: 10px!important;
+      padding-top: 10px !important;
       gap: 3px;
-     }
+    }
     .homeCardHeader {
       font-size: $font-28;
       color: #ffffff;
@@ -399,7 +399,7 @@
       text-align: left;
       font-family: $font-Hauora-600;
       line-height: normal;
-      span{
+      span {
         color: $font-gray;
       }
       @media only screen and (max-width: $desktop-1799) {
@@ -407,14 +407,13 @@
       }
       @media only screen and (max-width: $mobile-699) {
         font-size: $font-16;
-       
-       }
+      }
     }
     .homeCardDesc {
       font-size: $font-20;
       color: #bfbfbf;
       width: 352px;
-     font-family: $font-Hauora-500;
+      font-family: $font-Hauora-500;
       @media only screen and (max-width: $desktop-1799) {
         font-size: $font-16;
         width: 254px;
@@ -438,7 +437,6 @@
         width: 36px;
         height: 36px;
       }
-     
     }
   }
   .home-last-div {
@@ -476,10 +474,10 @@
   }
 }
 
-.homeCard.commit{
+.homeCard.commit {
   @media only screen and (max-width: $mobile-699) {
-    min-width: 196px!important;
-    .homeCardDesc{
+    min-width: 196px !important;
+    .homeCardDesc {
       @media only screen and (max-width: $mobile-699) {
         width: 164px;
       }
@@ -487,48 +485,45 @@
   }
 }
 
-
-.homeCard.stress{
+.homeCard.stress {
   @media only screen and (max-width: $mobile-699) {
-    min-width: 246px!important;
-    .homeCardDesc{
+    min-width: 246px !important;
+    .homeCardDesc {
       @media only screen and (max-width: $mobile-699) {
         width: 214px;
       }
     }
   }
-  
-}  
-.homeCard.guest{
+}
+.homeCard.guest {
   @media only screen and (max-width: $mobile-699) {
-    min-width: 262px!important;
+    min-width: 262px !important;
   }
-  .homeCardDesc{
+  .homeCardDesc {
     @media only screen and (max-width: $mobile-699) {
       width: 243px;
     }
   }
 }
 
-.homeCard.private-jet{
+.homeCard.private-jet {
   @media only screen and (max-width: $mobile-699) {
-    min-width: 250px!important;
+    min-width: 250px !important;
   }
-  .homeCardDesc{
+  .homeCardDesc {
     @media only screen and (max-width: $mobile-699) {
       width: 218px;
     }
   }
 }
 
-.homeCard.health{
+.homeCard.health {
   @media only screen and (max-width: $mobile-699) {
-    min-width: 240px!important;
+    min-width: 240px !important;
   }
-  .homeCardDesc{
+  .homeCardDesc {
     @media only screen and (max-width: $mobile-699) {
       width: 208px;
     }
   }
 }
-

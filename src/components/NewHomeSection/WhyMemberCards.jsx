@@ -80,7 +80,7 @@ const WhyMemberCards = () => {
   return (
     <div>
       <div className='why-member-main'>
-        <h1>Why be a member?</h1>
+        <h2>Why be a member?</h2>
 
         <div id='homeCards' className='home-card-grid'>
           <div onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} className='homeCard'>
@@ -109,7 +109,7 @@ const WhyMemberCards = () => {
           <div className='homeCard' onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
             <div className='home-inner'>
               <img src='/images/img_settings.svg' alt='settings' />
-              <h1 className='homeCardHeader'>Private terminal lounges</h1>
+              <h2 className='homeCardHeader'>Private terminal lounges</h2>
             </div>
             <p className='homeCardDesc'>
               Travel in style from our private terminal lounges. Indulge in a selection of carefully
@@ -123,7 +123,7 @@ const WhyMemberCards = () => {
           >
             <div className='home-inner'>
               <img src='/images/img_television_white_a700.svg' alt='television' />
-              <h1 className='homeCardHeader'>No commitment, cancel anytime</h1>
+              <h2 className='homeCardHeader'>No commitment, cancel anytime</h2>
             </div>
             <p className='homeCardDesc'>
               Benefit from our membership's monthly payments and auto-renewal. Cancel anytime to
@@ -154,9 +154,9 @@ const WhyMemberCards = () => {
           >
             <div className='home-inner'>
               <img src='/images/img_favorite_white_a700_48x44.svg' alt='favorite' />
-              <h1 className='homeCardHeader'>
+              <h2 className='homeCardHeader'>
                 Health <span>and</span> safety
-              </h1>
+              </h2>
             </div>
             <p className='homeCardDesc'>
               You fly with a maximum of 7 other passengers. With less contact points and reduced
@@ -177,9 +177,9 @@ const WhyMemberCards = () => {
           <div className='homeCard' onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
             <div className='home-inner'>
               <img src='/images/img_search.svg' alt='search' />
-              <h1 className='homeCardHeader'>
+              <h2 className='homeCardHeader'>
                 Community <span>and</span> networking
-              </h1>
+              </h2>
             </div>
             <p className='homeCardDesc'>
               Join a community of discerning Black Jet members, fostering meaningful connections
@@ -193,7 +193,7 @@ const WhyMemberCards = () => {
           >
             <div className='home-inner'>
               <img src='/images/img_close_white_a700.svg' alt='close' />
-              <h1 className='homeCardHeader'>Guest Passes</h1>
+              <h2 className='homeCardHeader'>Guest Passes</h2>
             </div>
             <p className='homeCardDesc'>
               With a Black Jet membership, every three months a complementary Guest Pass is reserved
@@ -208,9 +208,9 @@ const WhyMemberCards = () => {
           >
             <div className='home-inner'>
               <img src='/images/private-m.svg' alt='thumbsup' />
-              <h1 className='homeCardHeader'>
+              <h2 className='homeCardHeader'>
                 Private jet <span>travel experience</span> within your reach
-              </h1>
+              </h2>
             </div>
             <p className='homeCardDesc'>
               Gone are the days when private jet travel was reserved for the ultra-wealthy and
@@ -229,9 +229,9 @@ const WhyMemberCards = () => {
                 src='/images/img_thumbsup_white_a700.svg'
                 alt='thumbsup'
               />
-              <h1 className='homeCardHeader'>
+              <h2 className='homeCardHeader'>
                 No drawn-out boarding procedures, no security lines, no loudspeakers
-              </h1>
+              </h2>
             </div>
             <p className='homeCardDesc'>
               Arrive and board your aircraft in minutes with Black Jet, bypassing security checks,

@@ -134,9 +134,9 @@ const Booking = ({ open, setOpen }) => {
           <div className='homeCard stress'>
             <div className='home-inner'>
               <img src='/images/member-mob-2.svg' alt='close' />
-              <h1 className='homeCardHeader'>
+              <h2 className='homeCardHeader'>
                 Community <span>and</span> <br /> networking
-              </h1>
+              </h2>
             </div>
             <p className='homeCardDesc'>
               Join a community of discerning Black Jet members, fostering meaningful connections
@@ -147,7 +147,7 @@ const Booking = ({ open, setOpen }) => {
           <div className='homeCard guest'>
             <div className='home-inner'>
               <img src='/images/member-mob-3.svg' alt='close' />
-              <h1 className='homeCardHeader'>Guest Passes</h1>
+              <h2 className='homeCardHeader'>Guest Passes</h2>
             </div>
             <p className='homeCardDesc'>
               With a Black Jet membership, every three months a complementary Guest Pass is reserved
@@ -159,9 +159,9 @@ const Booking = ({ open, setOpen }) => {
           <div className='homeCard'>
             <div className='home-inner'>
               <img src='/images/member-mob-4.svg' alt='search' />
-              <h1 className='homeCardHeader'>
+              <h2 className='homeCardHeader'>
                 Health <span>and</span> safety
-              </h1>
+              </h2>
             </div>
             <p className='homeCardDesc'>
               You fly with a maximum of 7 other passengers. With less contact points and reduced
@@ -184,9 +184,9 @@ const Booking = ({ open, setOpen }) => {
           <div className='homeCard commit'>
             <div className='home-inner'>
               <img src='/images/member-mob-6.svg' alt='television' />
-              <h1 className='homeCardHeader'>
+              <h2 className='homeCardHeader'>
                 No drawn-out boarding procedures, no security lines, no loudspeakers
-              </h1>
+              </h2>
             </div>
             <p className='homeCardDesc'>
               Arrive and board your aircraft in minutes with Black Jet, bypassing security checks,
@@ -226,7 +226,7 @@ const Booking = ({ open, setOpen }) => {
           <div className='homeCard'>
             <div className='home-inner'>
               <img src='/images/member-mob-9.svg' alt='whybeamember' />
-              <h1 className='homeCardHeader'>No commitment, cancel anytime</h1>
+              <h2 className='homeCardHeader'>No commitment, cancel anytime</h2>
             </div>
             <p className='homeCardDesc'>
               Benefit from our membership's monthly payments and auto-renewal. Cancel anytime to
@@ -252,11 +252,11 @@ const Booking = ({ open, setOpen }) => {
                 src='/images/member-mob-11.svg'
                 alt='thumbsup'
               />
-              <h1 className='homeCardHeader'>Unlimited flights</h1>
+              <h2 className='homeCardHeader'>Unlimited flights</h2>
             </div>
             <p className='homeCardDesc'>
-              Enjoy unlimited flights with a fixed monthly fee. Absolutely no hidden charges, no
-              surprises.
+              Enjoy unlimited flights with a fiEnjoy unlimited flights with a fixed monthly fee.
+              Absolutely no hidden charges, no surprises.
             </p>
           </div>
         </div>
